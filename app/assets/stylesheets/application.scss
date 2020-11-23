@@ -4,3 +4,21 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 @import '@fortawesome/fontawesome-free/scss/solid';
 @import '@fortawesome/fontawesome-free/scss/brands';
 @import 'bootstrap/scss/bootstrap';
+
+@font-face {
+  font-family: "Yanone Kaffeesatz";
+  src: url(assets/fonts/YanoneKaffeesatz-Regular.ttf) format('truetype');
+}
+
+html,
+body {
+  font-family: "Yanone Kaffeesatz";
+  font-size: 18px;
+  max-width: 90%;
+  margin: auto;
+}
+
+table {
+  margin: auto;
+  font-size: 15px;
+}

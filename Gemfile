@@ -60,3 +60,5 @@ group :development, :test do
   gem 'table_print'
   gem 'faker'
 end
+
+gem 'devise'

@@ -1,6 +1,3 @@
-
-<p id="notice"><%= notice %></p>
-
 <h1 id="articlesTitle">Articles</h1>
 <button class="btn btn-secondary" id="countArticlesBtn">Compter le nombre d'articles</button>
 
@@ -20,7 +17,7 @@
         <td><%= article.content %></td>
         <td><%= link_to 'Show', article %></td>
         <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Êtes-vous certain de vouloir supprimer cet article ?' } %></td>
       </tr>
     <% end %>
   </tbody>

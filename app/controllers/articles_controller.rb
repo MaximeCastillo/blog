@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
+  before_action :verify_author, only: [:edit, :update, :destroy]
 
   # GET /articles
   # GET /articles.json
@@ -24,7 +26,12 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
-    @article = Article.new(article_params)
+    #@article = Article.new(article_params, user_id: current_user.id)
+    @article = Article.new(
+      title: article_params[:title],
+      content: article_params[:content],
+      user_id: current_user.id
+    )
 
     respond_to do |format|
       if @article.save
@@ -71,4 +78,5 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:title, :content)
     end
+
 end
